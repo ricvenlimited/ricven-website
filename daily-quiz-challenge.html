@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daily Quiz &amp; Challenge | Richard Studios</title>
+
+  <meta
+    name="description"
+    content="Daily Quiz & Challenge is a fast-paced quiz app with Bible, Science, General Knowledge and Africa & Nigeria categories."
+  >
+
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --text: #151515;
+      --muted: #666;
+      --card: #ffffff;
+      --border: #e4e4e0;
+      --accent: #151515;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 80px 0 55px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      max-width: 800px;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 24px;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 24px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .button:hover {
+      opacity: 0.85;
+    }
+
+    .section {
+      padding: 55px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px 20px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .feature h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .category {
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    .android-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    .android-box p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .download-box {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 45px 25px;
+    }
+
+    .download-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .download-box p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .download-note {
+      margin-top: 15px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      margin-top: 30px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer p,
+    footer a {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 55px 0 40px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        padding: 20px;
+      }
+
+      .android-box,
+      .download-box {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">Richard Studios</a>
+
+      <a href="index.html" class="back-link">
+        ← Back to website
+      </a>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container">
+
+        <p class="eyebrow">ANDROID APP</p>
+
+        <h1>Daily Quiz &amp; Challenge</h1>
+
+        <p class="hero-text">
+          Test your mind. Beat your score. Daily Quiz &amp; Challenge
+          is a fast-paced quiz app designed to sharpen your knowledge
+          every day.
+        </p>
+
+        <a href="#download" class="button">
+          Download APK
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section">
+      <div class="container">
+
+        <p class="eyebrow">HOW IT WORKS</p>
+
+        <h2>A quick challenge whenever you're ready.</h2>
+
+        <p class="section-intro">
+          Choose a category, answer timed questions, earn points and
+          work towards improving your best score. The goal is simple:
+          play daily and improve daily.
+        </p>
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>10</strong>
+            <span>QUESTIONS PER QUIZ</span>
+          </div>
+
+          <div class="stat">
+            <strong>15s</strong>
+            <span>PER QUESTION</span>
+          </div>
+
+          <div class="stat">
+            <strong>100</strong>
+            <span>POINTS</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section">
+      <div class="container">
+
+        <p class="eyebrow">CATEGORIES</p>
+
+        <h2>Choose your challenge.</h2>
+
+        <p class="section-intro">
+          Test yourself across different areas of knowledge.
+        </p>
+
+        <div class="categories">
+
+          <span class="category">General Knowledge</span>
+          <span class="category">Bible</span>
+          <span class="category">Africa &amp; Nigeria</span>
+          <span class="category">Science</span>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="section">
+      <div class="container">
+
+        <p class="eyebrow">FEATURES</p>
+
+        <h2>Built for quick daily challenges.</h2>
+
+        <div class="features">
+
+          <div class="feature">
+            <h3>Timed Questions</h3>
+            <p>
+              You have 15 seconds to answer each question,
+              keeping every quiz fast-paced.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Daily Streaks</h3>
+            <p>
+              Keep playing and build your daily streak as you
+              continue your quiz journey.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Best Scores</h3>
+            <p>
+              Track your performance and challenge yourself
+              to beat your previous score.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Bonus Points</h3>
+            <p>
+              Earn bonus points through available rewarded
+              ad opportunities inside the app.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ANDROID -->
+
+    <section class="section">
+      <div class="container">
+
+        <p class="eyebrow">ANDROID</p>
+
+        <h2>Made for Android.</h2>
+
+        <div class="android-box">
+
+          <p>
+            Daily Quiz &amp; Challenge is available as an Android APK
+            for users who want to install the app directly on their
+            Android device.
+          </p>
+
+          <p>
+            The APK provided on this page will be the official signed
+            release build of the app.
+          </p>
+
+          <p>
+            For your security, only the official release APK from
+            Richard Studios should be used.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DOWNLOAD -->
+
+    <section class="section" id="download">
+      <div class="container">
+
+        <div class="download-box">
+
+          <p class="eyebrow">DOWNLOAD</p>
+
+          <h2>Get Daily Quiz &amp; Challenge</h2>
+
+          <p>
+            Download the official Android APK and start your next
+            challenge.
+          </p>
+
+          <!--
+            The actual signed APK will be connected here after
+            we retrieve it from the GitHub Actions release build.
+
+            DO NOT change this link to a fake APK.
+          -->
+
+          <a href="#" class="button" id="download-apk">
+            Download APK
+          </a>
+
+          <p class="download-note">
+            Official Android release • Signed APK
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PRIVACY -->
+
+    <section class="section">
+      <div class="container">
+
+        <p class="eyebrow">PRIVACY</p>
+
+        <h2>Your privacy matters.</h2>
+
+        <p class="section-intro">
+          Please review the Richard Studios Privacy Policy to learn
+          how information is handled when using our website and apps.
+        </p>
+
+        <a href="privacy.html" class="button">
+          View Privacy Policy
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 Richard Studios
+      </p>
+
+      <a href="privacy.html">
+        Privacy Policy
+      </a>
+
+    </div>
+  </footer>
+
+</body>
+  </html>
